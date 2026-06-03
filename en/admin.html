@@ -17,6 +17,36 @@
   <link rel="alternate" hreflang="no" href="../no/administrasjon.html">
   <link rel="alternate" hreflang="fi" href="../fi/hallinta.html">
   <link rel="alternate" hreflang="sv" href="../sv/administration.html">
+  <script>
+    (function () {
+      var storageKey = 'dv_docs_theme';
+      function preferredTheme() {
+        var stored = localStorage.getItem(storageKey);
+        if (stored === 'light' || stored === 'dark') return stored;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      function applyTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        var label = theme === 'dark' ? '☀️' : '🌙';
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (button) {
+          button.textContent = label;
+          button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          button.setAttribute('title', theme === 'dark' ? 'Light mode' : 'Dark mode');
+        });
+      }
+      window.DiscVaultDocsTheme = {
+        init: function () { applyTheme(preferredTheme()); },
+        toggle: function () {
+          var next = (document.documentElement.dataset.theme || preferredTheme()) === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(storageKey, next);
+          applyTheme(next);
+        }
+      };
+      applyTheme(preferredTheme());
+      document.addEventListener('DOMContentLoaded', window.DiscVaultDocsTheme.init);
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -33,6 +63,7 @@
 <a href="developers.html" class="">Developers</a>
 <a href="faq.html" class="">FAQ</a></nav>
     <div class="header-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle onclick="DiscVaultDocsTheme.toggle()" aria-label="Toggle light/dark mode">🌙</button>
       <details class="language-menu">
         <summary>English</summary>
         <div class="language-list" aria-label="Available languages">

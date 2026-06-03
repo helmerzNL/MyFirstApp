@@ -7,6 +7,36 @@
   <meta http-equiv="refresh" content="0; url=./nl/gebruikershandleiding.html">
   <link rel="canonical" href="./nl/gebruikershandleiding.html">
   <link rel="stylesheet" href="./styles.css">
+  <script>
+    (function () {
+      var storageKey = 'dv_docs_theme';
+      function preferredTheme() {
+        var stored = localStorage.getItem(storageKey);
+        if (stored === 'light' || stored === 'dark') return stored;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      function applyTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        var label = theme === 'dark' ? '☀️' : '🌙';
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (button) {
+          button.textContent = label;
+          button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          button.setAttribute('title', theme === 'dark' ? 'Light mode' : 'Dark mode');
+        });
+      }
+      window.DiscVaultDocsTheme = {
+        init: function () { applyTheme(preferredTheme()); },
+        toggle: function () {
+          var next = (document.documentElement.dataset.theme || preferredTheme()) === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(storageKey, next);
+          applyTheme(next);
+        }
+      };
+      applyTheme(preferredTheme());
+      document.addEventListener('DOMContentLoaded', window.DiscVaultDocsTheme.init);
+    })();
+  </script>
 </head>
 <body>
   <main id="content">
