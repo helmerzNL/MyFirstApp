@@ -1,6 +1,6 @@
-# DiscVault Next Docs
+# DiscVault 26 Docs
 
-Statische documentatie-website voor DiscVault Next, bedoeld voor GitHub Pages zonder build-step.
+Statische documentatie-website voor DiscVault 26, bedoeld voor GitHub Pages zonder build-step.
 
 ## Pagina's
 

@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Developers · DiscVault Next Docs</title>
-  <meta name="description" content="Developer-overzicht van DiscVault architectuur, runtime en API surface.">
+  <title>Developers · DiscVault 26 Docs</title>
+  <meta name="description" content="Developer-overzicht van DiscVault 26 integraties, runtime en API surface.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <a class="skip-link" href="#content">Spring naar inhoud</a>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="DiscVault Next Docs home">
+    <a class="brand" href="index.html" aria-label="DiscVault 26 Docs home">
       <span class="brand-mark">DV</span>
-      <span><strong>DiscVault Next</strong><small>Docs</small></span>
+      <span><strong>DiscVault 26</strong><small>Docs</small></span>
     </a>
     <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="">Overzicht</a>
 <a href="installatie.html" class="">Installatie</a>
@@ -21,18 +21,36 @@
 <a href="mcp-ai.html" class="">MCP & AI</a>
 <a href="developers.html" class="active">Developers</a>
 <a href="faq.html" class="">FAQ</a></nav>
-    <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
+    <div class="header-actions">
+      <details class="language-menu">
+        <summary>Nederlands</summary>
+        <div class="language-list" aria-label="Beschikbare talen">
+          <a href="index.html" aria-current="true">Nederlands</a>
+          <span>English</span>
+          <span>Deutsch</span>
+          <span>Français</span>
+          <span>Español</span>
+          <span>Italiano</span>
+          <span>Português</span>
+          <span>Dansk</span>
+          <span>Norsk</span>
+          <span>Suomi</span>
+          <span>Svenska</span>
+        </div>
+      </details>
+      <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
+    </div>
   </header>
   <main id="content">
-    <section class="hero"><div class="hero-copy"><p class="eyebrow">Developers</p><h1>Architectuur en integratiepunten</h1><p class="lead">Deze pagina geeft een publiek, hoog-niveau overzicht van de DiscVault runtime. Interne databaseschema’s en migratiedetails horen niet in de marketing/docs-site.</p><div class="actions"><a class="button primary" href="#runtime">Runtime</a><a class="button" href="#api">API surface</a></div></div><div class="panel"><h2>Repo-layout</h2><dl class="spec-list"><div><dt><code>app/frontend</code></dt><dd>Webapp/PWA assets.</dd></div><div><dt><code>app/backend</code></dt><dd>Flask API, auth en adminroutes.</dd></div><div><dt><code>app/mcp-server</code></dt><dd>MCP service en tools.</dd></div><div><dt><code>app/deploy</code></dt><dd>All-in-one en Unraid deployment.</dd></div></dl></div></section>
-    <section class="section" id="runtime"><div class="section-heading"><p class="eyebrow">Runtime</p><h2>All-in-one container</h2></div><div class="stack"><div class="flow-row"><strong>Nginx</strong><span>Serveert frontend en proxyt API/MCP-verkeer.</span></div><div class="flow-row"><strong>Flask/Gunicorn</strong><span>Product- en adminroutes voor collectie, auth, settings en integraties.</span></div><div class="flow-row"><strong>MCP service</strong><span>Streamable HTTP endpoint voor AI-clients, beschikbaar via webpoort <code>/mcp</code>.</span></div><div class="flow-row"><strong>Persistent storage</strong><span><code>/data</code> bewaart runtime-data die containerupdates moet overleven.</span></div></div></section>
+    <section class="hero"><div class="hero-copy"><p class="eyebrow">Developers</p><h1>Architectuur en integratiepunten</h1><p class="lead">Deze pagina geeft een publiek, hoog-niveau overzicht van de DiscVault runtime. Diepe implementatiedetails en migratiehistorie horen niet in de marketing/docs-site.</p><div class="actions"><a class="button primary" href="#runtime">Runtime</a><a class="button" href="#api">API surface</a></div></div><div class="panel"><h2>Repo-layout</h2><dl class="spec-list"><div><dt><code>app/frontend</code></dt><dd>Webapp/PWA assets.</dd></div><div><dt><code>app/backend</code></dt><dd>API, auth en adminroutes.</dd></div><div><dt><code>app/mcp-server</code></dt><dd>MCP service en tools.</dd></div><div><dt><code>app/deploy</code></dt><dd>All-in-one en Unraid deployment.</dd></div></dl></div></section>
+    <section class="section" id="runtime"><div class="section-heading"><p class="eyebrow">Runtime</p><h2>All-in-one container</h2></div><div class="stack"><div class="flow-row"><strong>Nginx</strong><span>Serveert frontend en proxyt API/MCP-verkeer.</span></div><div class="flow-row"><strong>Backend API</strong><span>Product- en adminroutes voor collectie, auth, settings en integraties.</span></div><div class="flow-row"><strong>MCP service</strong><span>Streamable HTTP endpoint voor AI-clients, beschikbaar via webpoort <code>/mcp</code>.</span></div><div class="flow-row"><strong>Persistent storage</strong><span><code>/data</code> bewaart runtime-data die containerupdates moet overleven.</span></div></div></section>
     <section class="section" id="api"><div class="section-heading"><p class="eyebrow">API surface</p><h2>Publiek te benoemen routegroepen</h2></div><div class="grid three"><article class="card"><h3>Health en stats</h3><p><code>/api/health</code> en <code>/api/stats</code> voor status en globale cijfers.</p></article><article class="card"><h3>Movies</h3><p>CRUD, lookup, search, imports, watchlist, watch history en bulkacties.</p></article><article class="card"><h3>Admin/settings</h3><p>Users, roles, groups, invites, backups, logs, push, settings en sync-routes.</p></article></div><div class="callout warning"><h3>Noem dit “API surface”, niet “stabiele publieke API”</h3><p>Veel routes zijn product- of adminintern. Link voor details naar contractdocs wanneer die bewust openbaar zijn.</p></div></section>
     <section class="section"><div class="section-heading"><p class="eyebrow">Bronnen</p><h2>Relevante bestanden</h2></div><div class="grid two"><article class="card"><h3>Docs en deployment</h3><ul><li><code>README.md</code></li><li><code>app/README.md</code></li><li><code>app/deploy/all-in-one/README.md</code></li><li><code>app/deploy/unraid/README.md</code></li></ul></article><article class="card"><h3>Contracten</h3><ul><li><code>MOBILE_API_CONTRACT.md</code></li><li><code>PASSKEY_AUTH_IMPLEMENTATION_CONTRACT.md</code></li><li><code>AUTH_AND_INVITES_UI_CONTRACT.md</code></li><li><code>MOVIEVAULT_INTEGRATION_CONTRACT.md</code></li></ul></article></div></section>
 
   </main>
   <footer class="site-footer">
     <div>
-      <strong>DiscVault Next Docs</strong>
+      <strong>DiscVault 26 Docs</strong>
       <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
     </div>
     <div class="footer-links">

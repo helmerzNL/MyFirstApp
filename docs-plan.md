@@ -1,17 +1,17 @@
-# DiscVault Next Docs - informatiearchitectuur
+# DiscVault 26 Docs - informatiearchitectuur
 
 ## Doelgroep
 
 - Self-hosters en Unraid-gebruikers die DiscVault willen installeren, updaten en beheren.
 - Fysieke media collectors die willen begrijpen hoe collectiebeheer, import, metadata, watchlist en groepen werken.
 - Admins die gebruikers, passkeys, invite-only registratie, backups, logs, push-notificaties en MCP/API-sleutels beheren.
-- Developers/integrators die API, MCP, MovieVault-koppeling en container-runtime globaal moeten begrijpen zonder interne databasecontracten te publiceren.
+- Developers/integrators die API, MCP, MovieVault-koppeling en container-runtime globaal moeten begrijpen zonder interne data-contracten te publiceren.
 
 ## Navigatievoorstel
 
 Houd fase 2 statisch en GitHub Pages-vriendelijk, zonder build-step. Splits de huidige single-page site naar kleine HTML-pagina's zodra de content groter wordt:
 
-1. `index.html` - landing/overzicht: wat is DiscVault Next, belangrijkste flows, links naar install/guides.
+1. `index.html` - landing/overzicht: wat is DiscVault 26, belangrijkste flows, links naar install/guides.
 2. `installatie.html` - Docker, Unraid, ports, volumes, env-vars, updatebeleid, Pages-note.
 3. `gebruikershandleiding.html` - collectie, zoeken/filteren, toevoegen, importeren, bulk refresh, movie detail, watchlist/history, groups.
 4. `beheer.html` - passkeys, invite-only, user/group management, backups/restore, logs, settings, push notifications.
