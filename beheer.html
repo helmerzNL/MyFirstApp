@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beheer · DiscVault Next Docs</title>
+  <meta name="description" content="Admin- en securitydocs voor passkeys, invite-only registratie, groepen, backups en logs.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Spring naar inhoud</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DiscVault Next Docs home">
+      <span class="brand-mark">DV</span>
+      <span><strong>DiscVault Next</strong><small>Docs</small></span>
+    </a>
+    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="">Overzicht</a>
+<a href="installatie.html" class="">Installatie</a>
+<a href="gebruikershandleiding.html" class="">Gebruik</a>
+<a href="beheer.html" class="active">Beheer</a>
+<a href="mcp-ai.html" class="">MCP & AI</a>
+<a href="developers.html" class="">Developers</a>
+<a href="faq.html" class="">FAQ</a></nav>
+    <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
+  </header>
+  <main id="content">
+    <section class="hero"><div class="hero-copy"><p class="eyebrow">Beheer</p><h1>Veilig beheren zonder wachtwoorden</h1><p class="lead">DiscVault gebruikt passkeys/WebAuthn, kan invite-only registratie afdwingen en geeft admins hulpmiddelen voor users, groups, backups, logs en pushmeldingen.</p><div class="actions"><a class="button primary" href="#security">Security</a><a class="button" href="#backups">Backups</a></div></div><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_security_user_mgmt.webp" alt="Admin user management"><figcaption>Admins beheren users, rollen en toegang vanuit de security-sectie.</figcaption></figure></section>
+    <section class="section" id="security"><div class="section-heading"><p class="eyebrow">Account en toegang</p><h2>Passkeys, invite-only en groups</h2></div><div class="grid three"><figure class="shot browser-frame"><img src="assets/images/Desktop_profile_security.webp" alt="Profiel security met passkeys"><figcaption>Gebruikers beheren hun eigen passkeys en security-instellingen.</figcaption></figure><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_security_invite_only.webp" alt="Invite-only registratie"><figcaption>Invite-only registratie beperkt nieuwe accounts tot uitgegeven codes.</figcaption></figure><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_security_group_mgmt.webp" alt="Groepsbeheer"><figcaption>Groups en rollen helpen toegang en gedeelde views te organiseren.</figcaption></figure></div><div class="callout warning"><h3>Passkeys zijn domeingebonden</h3><p>Wijzig je hostnaam of protocol niet zomaar na ingebruikname. <code>RP_ID</code> en <code>RP_ORIGIN</code> moeten passen bij de URL die gebruikers openen.</p></div></section>
+    <section class="section" id="backups"><div class="section-heading"><p class="eyebrow">Continuïteit</p><h2>Backups, logs en instellingen</h2></div><div class="grid three"><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_backup.webp" alt="Backupbeheer"><figcaption>Maak, download, upload en restore backups vanuit admin tools.</figcaption></figure><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_logfiles.webp" alt="Logfiles bekijken"><figcaption>Logs helpen bij installatie-, import- en runtime-problemen.</figcaption></figure><figure class="shot browser-frame"><img src="assets/images/Admin_Desktop_advanced.webp" alt="Advanced admin settings"><figcaption>Geavanceerde instellingen zijn bedoeld voor beheerders.</figcaption></figure></div></section>
+    <section class="section"><div class="section-heading"><p class="eyebrow">Notificaties</p><h2>Pushmeldingen</h2></div><div class="grid two"><figure class="shot browser-frame"><img src="assets/images/Desktop_profile_push_notifications.webp" alt="Push notification settings"><figcaption>Gebruikers beheren hun eigen pushvoorkeuren.</figcaption></figure><article class="card"><h3>Waarvoor?</h3><p>Pushmeldingen kunnen gebruikers attenderen op relevante events, zoals group invites, mits de browser en appconfig dat ondersteunen.</p></article></div></section>
+
+  </main>
+  <footer class="site-footer">
+    <div>
+      <strong>DiscVault Next Docs</strong>
+      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
+      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
+      <a href="docs-plan.md">Docs-plan</a>
+    </div>
+  </footer>
+</body>
+</html>

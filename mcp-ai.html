@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP en AI · DiscVault Next Docs</title>
+  <meta name="description" content="MCP-integratie voor DiscVault Next met persoonlijke API-keys en user-scoping.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Spring naar inhoud</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DiscVault Next Docs home">
+      <span class="brand-mark">DV</span>
+      <span><strong>DiscVault Next</strong><small>Docs</small></span>
+    </a>
+    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="">Overzicht</a>
+<a href="installatie.html" class="">Installatie</a>
+<a href="gebruikershandleiding.html" class="">Gebruik</a>
+<a href="beheer.html" class="">Beheer</a>
+<a href="mcp-ai.html" class="active">MCP & AI</a>
+<a href="developers.html" class="">Developers</a>
+<a href="faq.html" class="">FAQ</a></nav>
+    <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
+  </header>
+  <main id="content">
+    <section class="hero"><div class="hero-copy"><p class="eyebrow">MCP & AI</p><h1>AI-toegang met persoonlijke sleutels</h1><p class="lead">DiscVault kan AI-assistenten koppelen via een streamable HTTP MCP endpoint. Gebruik bij voorkeur een persoonlijke API-key, zodat de assistant dezelfde user-scope heeft als de gebruiker.</p><div class="actions"><a class="button primary" href="#config">Clientconfig</a><a class="button" href="#tools">Tools</a></div></div><figure class="shot browser-frame"><img src="assets/images/Desktop_profile_api_keys.webp" alt="Persoonlijke API keys in profiel"><figcaption>Maak persoonlijke API-sleutels vanuit het profiel.</figcaption></figure></section>
+    <section class="section" id="config"><div class="section-heading"><p class="eyebrow">Configuratie</p><h2>Voorbeeld voor een MCP-client</h2></div><pre><code>{
+  "mcpServers": {
+    "discvault": {
+      "transport": "streamable-http",
+      "url": "http://your-server:6080/mcp",
+      "headers": {
+        "Authorization": "Bearer your-personal-api-key"
+      }
+    }
+  }
+}</code></pre><div class="callout danger"><h3>Publiceer nooit echte API-sleutels</h3><p>Gebruik placeholders in docs, screenshots en issues. Roteer sleutels wanneer ze per ongeluk gedeeld zijn.</p></div></section>
+    <section class="section" id="tools"><div class="section-heading"><p class="eyebrow">Wat kan een assistant doen?</p><h2>Voorbeelden van toolgroepen</h2></div><div class="grid three"><article class="card"><h3>Zoeken en lezen</h3><p><code>search_collection</code>, <code>list_all_movies</code> en <code>get_movie_details</code> voor collectievragen.</p></article><article class="card"><h3>Persoonlijke lijsten</h3><p>Watchlist, watch history en groups blijven gekoppeld aan de gebruiker van de API-key.</p></article><article class="card"><h3>Acties</h3><p>Afhankelijk van rechten en implementatie kunnen tools helpen met toevoegen, lookup en beheeracties.</p></article></div></section>
+    <section class="section"><div class="section-heading"><p class="eyebrow">Activiteit</p><h2>Controleer gebruik</h2></div><div class="grid two"><figure class="shot browser-frame"><img src="assets/images/Desktop_profile_mcp_activity.webp" alt="MCP activity in profiel"><figcaption>MCP-activiteit maakt zichtbaar wanneer API-toegang gebruikt is.</figcaption></figure><article class="callout"><h3>User-scoping is de standaard uitleg</h3><p>Beschrijf MCP niet als één globale sleutel voor alle data. De docs leggen persoonlijke API-keys en gebruikersscope uit.</p></article></div></section>
+
+  </main>
+  <footer class="site-footer">
+    <div>
+      <strong>DiscVault Next Docs</strong>
+      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
+      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
+      <a href="docs-plan.md">Docs-plan</a>
+    </div>
+  </footer>
+</body>
+</html>

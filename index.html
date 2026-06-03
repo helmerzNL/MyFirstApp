@@ -3,185 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DiscVault Next Docs</title>
-  <meta name="description" content="Uitleg en documentatie voor DiscVault Next: self-hosted beheer van fysieke films, gebruikers, groepen, backups en AI/MCP-koppelingen.">
+  <title>Overzicht · DiscVault Next Docs</title>
+  <meta name="description" content="Overzicht van DiscVault Next docs: installatie, gebruik, beheer, MCP en developerinformatie.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#content">Spring naar inhoud</a>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="DiscVault Next Docs home">
+    <a class="brand" href="index.html" aria-label="DiscVault Next Docs home">
       <span class="brand-mark">DV</span>
-      <span>
-        <strong>DiscVault Next</strong>
-        <small>Docs</small>
-      </span>
+      <span><strong>DiscVault Next</strong><small>Docs</small></span>
     </a>
-    <nav class="nav" aria-label="Hoofdnavigatie">
-      <a href="#wat-is-het">Wat is het?</a>
-      <a href="#architectuur">Architectuur</a>
-      <a href="#installatie">Installatie</a>
-      <a href="#mcp">MCP</a>
-      <a href="#beheer">Beheer</a>
-      <a href="#roadmap">Roadmap</a>
-    </nav>
+    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="active">Overzicht</a>
+<a href="installatie.html" class="">Installatie</a>
+<a href="gebruikershandleiding.html" class="">Gebruik</a>
+<a href="beheer.html" class="">Beheer</a>
+<a href="mcp-ai.html" class="">MCP & AI</a>
+<a href="developers.html" class="">Developers</a>
+<a href="faq.html" class="">FAQ</a></nav>
+    <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
   </header>
-
-  <main id="top">
+  <main id="content">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Self-hosted docs voor fysieke media collectors</p>
-        <h1>Hoe DiscVault Next werkt</h1>
-        <p class="lead">DiscVault Next is een moderne, self-hosted app om je 4K UHD, Blu-ray en DVD-collectie te beheren. Deze documentatie legt de onderdelen uit: van barcode-scan tot metadata, gebruikers, groepen, backups, PWA en MCP voor AI-workflows.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#quickstart">Start met de quickstart</a>
-          <a class="button" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">Bekijk broncode</a>
+        <p class="eyebrow">Self-hosted physical media docs</p>
+        <h1>Leer DiscVault Next kennen</h1>
+        <p class="lead">DiscVault Next is een self-hosted collectiebeheerder voor 4K UHD, Blu-ray en DVD. Deze docs helpen je installeren, dagelijks gebruiken, veilig beheren en koppelen aan AI-assistenten via MCP.</p>
+        <div class="actions">
+          <a class="button primary" href="installatie.html">Start met installeren</a>
+          <a class="button" href="gebruikershandleiding.html">Bekijk gebruikersflows</a>
         </div>
-      </div>
-      <aside class="hero-card" aria-label="Samenvatting">
-        <h2>In één zin</h2>
-        <p>DiscVault Next is je privé-catalogus voor fysieke films, met een webapp, backend API, SQLite database en optionele MCP-server voor AI-assistenten.</p>
-        <ul class="check-list">
-          <li>Barcode scannen of handmatig toevoegen</li>
-          <li>Metadata via OMDb en TMDb fallback</li>
-          <li>Meerdere gebruikers en groepen</li>
-          <li>Watchlist, kijkgeschiedenis en notificaties</li>
-          <li>MCP endpoint voor persoonlijke AI-toegang</li>
+        <ul class="pill-list" aria-label="Kernpunten">
+          <li>Docker & Unraid</li><li>Passkeys</li><li>Watchlist</li><li>Backups</li><li>MCP</li><li>PWA</li>
         </ul>
-      </aside>
+      </div>
+      <div class="hero-visual">
+        <figure class="shot browser-frame"><img src="assets/images/Desktop_collection_collection.webp" alt="DiscVault collectie-overzicht met filmkaarten"><figcaption>Collectie-overzicht met fysieke films, filters en snelle acties.</figcaption></figure>
+        <figure class="shot"><img src="assets/images/mobile_collection.webp" alt="Mobiele DiscVault collectie-weergave"><figcaption>Responsive PWA-weergave voor telefoon en tablet.</figcaption></figure>
+      </div>
     </section>
 
-    <section class="section" id="wat-is-het">
-      <div class="section-heading">
-        <p class="eyebrow">Productoverzicht</p>
-        <h2>Wat is DiscVault Next?</h2>
-      </div>
+    <section class="section">
+      <div class="section-heading"><p class="eyebrow">Waarvoor gebruik je het?</p><h2>De belangrijkste workflows</h2><p class="lead">De site is opgesplitst in kleine statische pagina’s, zodat GitHub Pages later direct kan hosten zonder build-pipeline.</p></div>
       <div class="grid three">
-        <article class="card">
-          <h3>Collectie beheren</h3>
-          <p>Voeg fysieke films toe via barcode-scan of handmatige invoer. DiscVault haalt automatisch metadata en artwork op waar mogelijk.</p>
-        </article>
-        <article class="card">
-          <h3>Zelf hosten</h3>
-          <p>Je draait DiscVault in je eigen omgeving, bijvoorbeeld Docker of Unraid. De database en uploads blijven in je eigen data-map.</p>
-        </article>
-        <article class="card">
-          <h3>AI-ready</h3>
-          <p>Met de MCP-server kan een AI-assistent je eigen collectie doorzoeken, details ophalen en acties uitvoeren binnen jouw rechten.</p>
-        </article>
+        <article class="card"><h3>Installeren</h3><p>Draai de all-in-one container met web UI, Flask API en MCP-service. Houd <code>/data</code> persistent voor database, posters, profielen en backups.</p><a href="installatie.html">Installatiegids →</a></article>
+        <article class="card"><h3>Collectie gebruiken</h3><p>Voeg titels toe via barcode of handmatige invoer, zoek en filter, bekijk details, onderhoud watchlist en kijkgeschiedenis.</p><a href="gebruikershandleiding.html">Gebruikershandleiding →</a></article>
+        <article class="card"><h3>Veilig beheren</h3><p>Werk met passkeys, invite-only registratie, users, groups, pushmeldingen, logs en backup/restore vanuit de adminomgeving.</p><a href="beheer.html">Beheergids →</a></article>
       </div>
     </section>
 
-    <section class="section split" id="architectuur">
-      <div>
-        <p class="eyebrow">Onder de motorkap</p>
-        <h2>Architectuur</h2>
-        <p>DiscVault Next bestaat uit meerdere onderdelen die samen als één applicatie kunnen draaien.</p>
-      </div>
+    <section class="section split">
+      <div><p class="eyebrow">Onder de motorkap</p><h2>Eén container, meerdere onderdelen</h2></div>
       <div class="stack">
-        <div class="flow-row"><strong>Frontend</strong><span>Statische webapp/PWA, geserveerd via Nginx.</span></div>
-        <div class="flow-row"><strong>Backend API</strong><span>Flask + Gunicorn voor auth, films, imports, backups, logs en instellingen.</span></div>
-        <div class="flow-row"><strong>Database</strong><span>SQLite database in de persistente <code>/data</code> map.</span></div>
-        <div class="flow-row"><strong>MCP-server</strong><span>Streamable HTTP endpoint waarmee AI-clients veilig met DiscVault praten.</span></div>
-        <div class="flow-row"><strong>Container</strong><span>All-in-one Docker image met Nginx, backend en supervisord.</span></div>
+        <div class="flow-row"><strong>Frontend/PWA</strong><span>Statische webapp met responsive collectie, cached app-shell en offline read fallback.</span></div>
+        <div class="flow-row"><strong>Flask API</strong><span>Routes voor films, imports, watchlist, auth, groups, settings, backups en push.</span></div>
+        <div class="flow-row"><strong>SQLite + assets</strong><span>Persistente data in <code>/data</code>: database, posters, avatars, profielen en backups.</span></div>
+        <div class="flow-row"><strong>MCP</strong><span>Streamable HTTP endpoint via <code>/mcp</code>, bij voorkeur met persoonlijke API-key per gebruiker.</span></div>
       </div>
     </section>
 
-    <section class="section" id="quickstart">
-      <div class="section-heading">
-        <p class="eyebrow">Snel starten</p>
-        <h2>Quickstart met Docker</h2>
-      </div>
-      <pre><code>docker run -d \
-  --name discvault \
-  -p 6080:80 \
-  -p 6090:6090 \
-  -e TZ=Europe/Amsterdam \
-  -e RP_ID=localhost \
-  -e RP_ORIGIN=http://localhost:6080 \
-  -v /mnt/user/appdata/discvault:/data \
-  ghcr.io/helmerzNL/DiscVault:latest</code></pre>
-      <p>Open daarna <code>http://localhost:6080</code>. Voor Unraid gebruik je de Community Applications template uit de DiscVault template-repo.</p>
-    </section>
-
-    <section class="section" id="installatie">
-      <div class="section-heading">
-        <p class="eyebrow">Configuratie</p>
-        <h2>Belangrijke instellingen</h2>
-      </div>
-      <div class="grid two">
-        <article class="card">
-          <h3>Verplicht voor realistische login</h3>
-          <dl>
-            <dt><code>RP_ID</code></dt><dd>Domein of hostnaam waarop passkeys geldig zijn.</dd>
-            <dt><code>RP_ORIGIN</code></dt><dd>Volledige origin, bijvoorbeeld <code>https://discvault.example.nl</code>.</dd>
-            <dt><code>TZ</code></dt><dd>Tijdzone, bijvoorbeeld <code>Europe/Amsterdam</code>.</dd>
-          </dl>
-        </article>
-        <article class="card">
-          <h3>Optioneel</h3>
-          <dl>
-            <dt><code>OMDB_API_KEY</code></dt><dd>Metadata ophalen via OMDb.</dd>
-            <dt><code>TMDB_API_KEY</code></dt><dd>Fallback metadata via TMDb.</dd>
-            <dt><code>JWT_SECRET</code></dt><dd>Eigen secret voor sessies/tokens.</dd>
-            <dt><code>MCP_API_KEY</code></dt><dd>Alleen voor oudere/global MCP-config; per-user API keys hebben de voorkeur.</dd>
-          </dl>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="mcp">
-      <div class="section-heading">
-        <p class="eyebrow">AI-integratie</p>
-        <h2>MCP: DiscVault koppelen aan een AI-assistent</h2>
-      </div>
-      <p>Iedere gebruiker kan in DiscVault een persoonlijke API-sleutel maken. Die sleutel bepaalt welke collectie, watchlist, kijkgeschiedenis en groepen de AI mag zien.</p>
-      <pre><code>{
-  "mcpServers": {
-    "discvault": {
-      "transport": "streamable-http",
-      "url": "http://your-server:6080/mcp",
-      "headers": {
-        "Authorization": "Bearer your-personal-api-key"
-      }
-    }
-  }
-}</code></pre>
-      <div class="grid three compact">
-        <article class="card"><h3>Zoeken</h3><p><code>search_collection</code>, <code>list_all_movies</code> en <code>get_movie_details</code>.</p></article>
-        <article class="card"><h3>Beheren</h3><p><code>add_movie</code>, <code>delete_movie</code> en <code>lookup_barcode</code>.</p></article>
-        <article class="card"><h3>Persoonlijk</h3><p><code>get_watchlist</code>, <code>get_watch_history</code> en <code>get_groups</code>.</p></article>
-      </div>
-    </section>
-
-    <section class="section split" id="beheer">
-      <div>
-        <p class="eyebrow">Dagelijks gebruik</p>
-        <h2>Beheer en veiligheid</h2>
-      </div>
-      <div class="stack">
-        <div class="flow-row"><strong>Passkeys</strong><span>Inloggen zonder wachtwoord. De private key blijft op het apparaat van de gebruiker.</span></div>
-        <div class="flow-row"><strong>Invite-only registratie</strong><span>Admins kunnen registratie beperken met one-time passwords.</span></div>
-        <div class="flow-row"><strong>Backups</strong><span>Maak backups vanuit de admin tools of kopieer de persistente data-map als de container uit staat.</span></div>
-        <div class="flow-row"><strong>Updates</strong><span>Gebruik <code>latest</code> voor stabiel en <code>beta</code> om nieuwe functies vroeg te testen.</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="roadmap">
-      <div class="section-heading">
-        <p class="eyebrow">Volgende iteraties</p>
-        <h2>Wat deze docs-site nog kan krijgen</h2>
-      </div>
+    <section class="section">
+      <div class="section-heading"><p class="eyebrow">Niet overclaimen</p><h2>Belangrijke scope-notities</h2></div>
       <div class="grid three">
-        <article class="card"><h3>Installatiegidsen</h3><p>Losse pagina's voor Docker, Unraid, reverse proxy, HTTPS en backups.</p></article>
-        <article class="card"><h3>Gebruikershandleiding</h3><p>Stap-voor-stap flows voor toevoegen, importeren, zoeken, watchlist en groepen.</p></article>
-        <article class="card"><h3>Developer docs</h3><p>API endpoints, MCP tools, release flow, GitHub Actions en lokale development setup.</p></article>
+        <article class="callout warning"><h3>Self-hosted, geen SaaS</h3><p>DiscVault draait in je eigen Docker/Unraid-omgeving. Deze docs claimen geen cloudhosting of managed service.</p></article>
+        <article class="callout warning"><h3>PWA is niet volledig offline</h3><p>De app-shell en leesfallback kunnen cachen; schrijfacties hebben backend-connectiviteit nodig.</p></article>
+        <article class="callout warning"><h3>MCP is user-scoped</h3><p>Gebruik persoonlijke API-sleutels zodat AI-tools alleen data zien die bij die gebruiker hoort.</p></article>
       </div>
     </section>
+
   </main>
-
   <footer class="site-footer">
-    <p>DiscVault Next Docs — eerste GitHub Pages versie.</p>
-    <p><a href="https://github.com/helmerzNL/DiscVault">DiscVault broncode</a> · <a href="https://discvault.eu">Live DiscVault website</a></p>
+    <div>
+      <strong>DiscVault Next Docs</strong>
+      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
+      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
+      <a href="docs-plan.md">Docs-plan</a>
+    </div>
   </footer>
 </body>
 </html>

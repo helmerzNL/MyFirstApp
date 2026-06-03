@@ -1,12 +1,18 @@
 # DiscVault Next Docs
 
-Eerste documentatie-website voor DiscVault Next.
+Statische documentatie-website voor DiscVault Next, bedoeld voor GitHub Pages zonder build-step.
 
-Deze site wordt gepubliceerd via GitHub Pages.
+## Pagina's
+
+- `index.html` — overzicht en belangrijkste workflows
+- `installatie.html` — Docker, Unraid, ports, volumes en env-vars
+- `gebruikershandleiding.html` — toevoegen, importeren, zoeken, details, watchlist en history
+- `beheer.html` — passkeys, invite-only, groups, backups, logs en push
+- `mcp-ai.html` — MCP-clientconfig, persoonlijke API-keys en user-scoping
+- `developers.html` — architectuur, runtime en publieke API-samenvatting
+- `faq.html` — korte probleemoplossing en updatechecklist
 
 ## Lokaal bekijken
-
-Open `index.html` direct in de browser, of start een kleine lokale server:
 
 ```bash
 python3 -m http.server 8080
@@ -14,12 +20,10 @@ python3 -m http.server 8080
 
 Daarna: http://localhost:8080
 
-## Inhoud
+## GitHub Pages
 
-- Wat DiscVault Next is
-- Architectuur
-- Docker quickstart
-- Belangrijke configuratie
-- MCP-integratie
-- Beheer en veiligheid
-- Roadmap voor volgende docs-pagina's
+De site gebruikt alleen statische HTML, CSS en relatieve links. GitHub Pages kan later direct vanuit de branch/root publiceren zodra Pages in de repository-instellingen is ingeschakeld.
+
+## Assets
+
+Geselecteerde screenshots staan in `assets/images/` en zijn gekopieerd uit de DiscVault productrepo. Publiceer geen secrets of echte API-sleutels in screenshots of codevoorbeelden.
