@@ -4,24 +4,32 @@ Review uitgevoerd tegen `/home/hermes/projects/github/DiscVault` en de huidige d
 
 ## Gecontroleerd
 
-- Naamgeving: zichtbare site gebruikt DiscVault 26 en vermijdt DiscVault Next/legacy als publiek verhaal.
+- Naamgeving: zichtbare site gebruikt DiscVault 26 en vermijdt oude productnamen/historische context als publiek verhaal.
 - Kernonderwerpen: MCP, passkeys/WebAuthn, Docker/Unraid, users/groups, backups, watchlist/history en PWA-scope.
 - Technische consistentie: poorten 6080/6090, `/data`, `/mcp`, `/mcp-health`, `RP_ID`, `RP_ORIGIN(S)`, `JWT_SECRET`, optionele OMDb/TMDb keys.
-- Meertaligheid: taalkiezer bevat dezelfde 11 locales als discvault.eu: nl, en, de, fr, es, it, pt, da, no, fi, sv.
+- Meertaligheid: de site heeft nu echte statische HTML-subfolders voor dezelfde 11 locales als discvault.eu: nl, en, de, fr, es, it, pt, da, no, fi, sv.
 - Links/assets: lokale HTML-links en afbeeldingen resolve-en zonder ontbrekende bestanden.
 
 ## Direct gepatcht
 
-- Docker quickstart aangevuld met OMDb/TMDb placeholders, `JWT_SECRET` en lowercase GHCR image-naam.
-- Passkey-uitleg aangescherpt met `RP_ORIGINS` en productie-waarschuwing rond secrets.
-- PWA-copy afgezwakt: app-shell/leesfallback kan cachen, schrijfacties vereisen backend.
-- MemberGroups-copy verduidelijkt: gedeelde views/uitnodigingen, geen real-time co-editing claim.
-- MCP-copy aangescherpt: persoonlijke API-keys/user-scope, huidige tools kunnen zoeken/lezen/toevoegen/lijsten ophalen; geen globale admin-sleutel als standaardpad.
-- Developers-pagina aangevuld met optionele directe MCP-poort 6090.
+- Generator aangepast zodat topicpagina’s geen hardcoded Engelse uitleg meer tonen in alle niet-Engelse talen.
+- Gegenereerde HTML opnieuw opgebouwd voor 11 talen × 7 pagina’s plus root-taalkeuze.
+- Root en oude top-level pagina’s functioneren als redirects/taalkeuze, zodat GitHub Pages zonder build-step kan publiceren.
+- PWA-copy blijft afgezwakt: app-shell/leesfallback kan cachen, schrijfacties vereisen backend.
+- MCP-copy blijft user-scoped: persoonlijke API-keys zijn het standaardverhaal, geen globale admin-sleutel als publieke route.
 
-## Open verbeterpunten voor volgende fase
+## Reviewbevindingen
 
-- Echte 11-talige docs ontbreken nog. De taalkiezer en locale-lijst zijn aanwezig, maar de pagina’s zelf zijn nog Nederlandse brontekst. Voor publicatie per taal zijn `/en/`, `/de/`, `/fr/`, `/es/`, `/it/`, `/pt/`, `/da/`, `/no/`, `/fi/`, `/sv/` of een client-side vertaalmechanisme nodig.
-- Overweeg een korte aparte pagina “Releasekanalen en updates” als Unraid/GHCR publicatie definitief is, zodat `latest/stable/beta` minder verspreid staat.
-- Als API-contracten later publiek worden, link dan alleen naar bewust gepubliceerde contractdocs; nu blijft de developers-pagina terecht hoog-over.
-- GitHub Pages staat nog handmatig uit door ontbrekende Pages-adminrechten; dit blijft buiten de inhoudelijke docs-review.
+- Sterk: de docs-site voldoet nu structureel aan de 11-talen-eis met echte HTML per taal en hreflang-alternates.
+- Sterk: DiscVault 26 is consequent de publieke naam; historische implementatiecontext wordt niet uitgelegd.
+- Sterk: de belangrijkste veiligheidsnuances staan erin: self-hosted, PWA niet volledig offline, MCP per gebruiker.
+- Aandachtspunt: de meertalige subpagina’s zijn inhoudelijk nog compact. Ze noemen de juiste onderwerpen, maar missen nog de rijkere screenshots/quickstarts uit de eerdere Nederlandse basis.
+- Aandachtspunt: Docker/Unraid-quickstart met exacte `docker run`, env-vars en backup/restore-stappen verdient in een volgende contentronde meer detail per taal.
+- Aandachtspunt: GitHub Pages staat nog handmatig uit door ontbrekende Pages-adminrechten; dit blijft buiten de inhoudelijke docs-review.
+
+## Concrete vervolgstappen
+
+- Voeg per taal een uitgebreidere installatiepagina toe met poorten 6080/6090, `/data`, `RP_ID`, `RP_ORIGIN(S)`, `JWT_SECRET`, OMDb/TMDb en Unraid Community Applications.
+- Voeg per taal een MCP-voorbeeldconfig toe met `Authorization: Bearer <personal-api-key>` en expliciete user-scope.
+- Voeg screenshots terug in de topicpagina’s waar dat de uitleg helpt: collectie, passkeys/security, group management, backup, MCP activity.
+- Pas pas daarna GitHub Pages/custom domain aan zodra de PAT/Pages-permissies beschikbaar zijn.

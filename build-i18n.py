@@ -168,12 +168,12 @@ def index_body(lang: str) -> str:
 def topic_body(lang: str, page: str) -> str:
     c = CONTENT[lang]; s = c["sections"]; core = c["core"]; n = c["nav"]
     page_data = {
-        "install": (n["install"], s["installBody"], [("Docker / Unraid", "Run the all-in-one container and keep /data persistent for collection data, posters, profiles and backups."), ("First run", "Create the first admin account, enable passkeys, then verify collection import, images and backup storage."), ("GitHub Pages docs", ui(lang, "github_pages"))]),
-        "guide": (n["guide"], s["useBody"], [(s["useTitle"], s["useBody"]), ("Watchlist & history", "Track what you want to watch next and what you have already seen, per user."), ("PWA", core["pwaBody"])]),
-        "admin": (n["admin"], s["adminBody"], [(core["selfHostedTitle"], core["selfHostedBody"]), ("Passkeys & invites", "Use passkeys, invite-only registration, users and groups to keep access intentional."), ("Backups & restore", "Use backups before upgrades and test restore paths before you need them." )]),
-        "mcp": (n["mcp"], core["mcpBody"], [(core["mcpTitle"], core["mcpBody"]), ("Endpoint", "Connect AI tools to the Streamable HTTP MCP endpoint at /mcp with a personal API key."), ("Safe automation", "Let assistants search, summarize and prepare actions without exposing another user's collection." )]),
-        "developers": (n["developers"], "Developer notes for running, extending and documenting DiscVault 26 without exposing secrets or old implementation details.", [("Local development", "Keep config and secrets outside the static docs. Use relative links and local screenshots for public pages."), ("Docs structure", "Each language is a real static folder with the same page set and hreflang alternates."), ("Contributions", "Keep user value first: collection workflows, self-hosting, passkeys, groups, backups and MCP." )]),
-        "faq": (n["faq"], "Short answers for common DiscVault 26 questions.", [(core["selfHostedTitle"], core["selfHostedBody"]), (core["pwaTitle"], core["pwaBody"]), (core["mcpTitle"], core["mcpBody"]), ("Languages", f"{s['languagesTitle']}: nl, en, de, fr, es, it, pt, da, no, fi, sv.")]),
+        "install": (n["install"], s["installBody"], [("Docker / Unraid", s["installBody"]), ("Passkeys / RP_ID", s["adminBody"]), ("GitHub Pages", ui(lang, "github_pages"))]),
+        "guide": (n["guide"], s["useBody"], [(s["useTitle"], s["useBody"]), ("Watchlist & history", s["useBody"]), ("PWA", core["pwaBody"])]),
+        "admin": (n["admin"], s["adminBody"], [(core["selfHostedTitle"], core["selfHostedBody"]), ("Passkeys & invites", s["adminBody"]), ("Backups & restore", s["adminBody"])]),
+        "mcp": (n["mcp"], core["mcpBody"], [(core["mcpTitle"], core["mcpBody"]), ("Endpoint /mcp", core["mcpBody"]), ("User scope", core["mcpBody"])]),
+        "developers": (n["developers"], s["workflowsLead"], [(s["architectureTitle"], s["installBody"]), (s["languagesTitle"], s["languagesLead"]), (s["scopeTitle"], f"{core['selfHostedBody']} {core['mcpBody']}")]),
+        "faq": (n["faq"], s["scopeTitle"], [(core["selfHostedTitle"], core["selfHostedBody"]), (core["pwaTitle"], core["pwaBody"]), (core["mcpTitle"], core["mcpBody"]), (s["languagesTitle"], "nl, en, de, fr, es, it, pt, da, no, fi, sv")]),
     }[page]
     title, lead, cards = page_data
     return f'''    <section class="page-hero">
