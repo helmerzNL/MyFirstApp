@@ -3,110 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Overzicht · DiscVault 26 Docs</title>
-  <meta name="description" content="Overzicht van DiscVault 26 docs: installatie, gebruik, beheer, MCP en developerinformatie.">
+  <title>DiscVault 26 Docs</title>
+  <meta name="description" content="Meertalige DiscVault 26 documentatie in dezelfde 11 talen als DiscVault.">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="./nl/index.html">
+  <script>
+    (function () {
+      var supported = ["nl", "en", "de", "fr", "es", "it", "pt", "da", "no", "fi", "sv"];
+      var preferred = (navigator.languages || [navigator.language || 'nl'])
+        .map(function (lang) { return String(lang).slice(0, 2).toLowerCase(); })
+        .find(function (lang) { return supported.indexOf(lang) !== -1; });
+      window.location.replace('./' + (preferred || 'nl') + '/index.html');
+    })();
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#content">Spring naar inhoud</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="DiscVault 26 Docs home">
-      <span class="brand-mark">DV</span>
-      <span><strong>DiscVault 26</strong><small>Docs</small></span>
-    </a>
-    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="active">Overzicht</a>
-<a href="installatie.html" class="">Installatie</a>
-<a href="gebruikershandleiding.html" class="">Gebruik</a>
-<a href="beheer.html" class="">Beheer</a>
-<a href="mcp-ai.html" class="">MCP & AI</a>
-<a href="developers.html" class="">Developers</a>
-<a href="faq.html" class="">FAQ</a></nav>
-    <div class="header-actions">
-      <details class="language-menu">
-        <summary>Nederlands</summary>
-        <div class="language-list" aria-label="Beschikbare talen">
-          <a href="index.html" aria-current="true">Nederlands</a>
-          <span>English</span>
-          <span>Deutsch</span>
-          <span>Français</span>
-          <span>Español</span>
-          <span>Italiano</span>
-          <span>Português</span>
-          <span>Dansk</span>
-          <span>Norsk</span>
-          <span>Suomi</span>
-          <span>Svenska</span>
-        </div>
-      </details>
-      <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
-    </div>
-  </header>
   <main id="content">
-    <section class="hero">
+    <section class="hero single">
       <div class="hero-copy">
-        <p class="eyebrow">Self-hosted physical media docs</p>
-        <h1>Leer DiscVault 26 kennen</h1>
-        <p class="lead">DiscVault 26 is een self-hosted collectiebeheerder voor 4K UHD, Blu-ray en DVD. Deze docs helpen je installeren, dagelijks gebruiken, veilig beheren en koppelen aan AI-assistenten via MCP.</p>
-        <div class="actions">
-          <a class="button primary" href="installatie.html">Start met installeren</a>
-          <a class="button" href="gebruikershandleiding.html">Bekijk gebruikersflows</a>
-        </div>
-        <ul class="pill-list" aria-label="Kernpunten">
-          <li>Docker & Unraid</li><li>Passkeys</li><li>Watchlist</li><li>Backups</li><li>MCP</li><li>PWA</li>
-        </ul>
-      </div>
-      <div class="hero-visual">
-        <figure class="shot browser-frame"><img src="assets/images/Desktop_collection_collection.webp" alt="DiscVault collectie-overzicht met filmkaarten"><figcaption>Collectie-overzicht met fysieke films, filters en snelle acties.</figcaption></figure>
-        <figure class="shot"><img src="assets/images/mobile_collection.webp" alt="Mobiele DiscVault collectie-weergave"><figcaption>Responsive PWA-weergave voor telefoon en tablet.</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading"><p class="eyebrow">Waarvoor gebruik je het?</p><h2>De belangrijkste workflows</h2><p class="lead">De site is opgesplitst in kleine statische pagina’s, zodat GitHub Pages later direct kan hosten zonder build-pipeline.</p></div>
-      <div class="grid three">
-        <article class="card"><h3>Installeren</h3><p>Draai de all-in-one container met web UI, API en MCP-service. Houd <code>/data</code> persistent voor collectiedata, posters, profielen en backups.</p><a href="installatie.html">Installatiegids →</a></article>
-        <article class="card"><h3>Collectie gebruiken</h3><p>Voeg titels toe via barcode of handmatige invoer, zoek en filter, bekijk details, onderhoud watchlist en kijkgeschiedenis.</p><a href="gebruikershandleiding.html">Gebruikershandleiding →</a></article>
-        <article class="card"><h3>Veilig beheren</h3><p>Werk met passkeys, invite-only registratie, users, groups, pushmeldingen, logs en backup/restore vanuit de adminomgeving.</p><a href="beheer.html">Beheergids →</a></article>
+        <p class="eyebrow">DiscVault 26 Docs</p>
+        <h1>Kies je taal</h1>
+        <p class="lead">Deze statische GitHub Pages-site is beschikbaar in dezelfde 11 talen als DiscVault. Zonder JavaScript kun je hieronder handmatig kiezen; met JavaScript word je doorgestuurd naar je browsertaal met fallback naar Nederlands.</p>
+        <div class="actions"><a class="button" href="nl/index.html" hreflang="nl" lang="nl">Nederlands</a>
+<a class="button" href="en/index.html" hreflang="en" lang="en">English</a>
+<a class="button" href="de/index.html" hreflang="de" lang="de">Deutsch</a>
+<a class="button" href="fr/index.html" hreflang="fr" lang="fr">Français</a>
+<a class="button" href="es/index.html" hreflang="es" lang="es">Español</a>
+<a class="button" href="it/index.html" hreflang="it" lang="it">Italiano</a>
+<a class="button" href="pt/index.html" hreflang="pt" lang="pt">Português</a>
+<a class="button" href="da/index.html" hreflang="da" lang="da">Dansk</a>
+<a class="button" href="no/index.html" hreflang="no" lang="no">Norsk</a>
+<a class="button" href="fi/index.html" hreflang="fi" lang="fi">Suomi</a>
+<a class="button" href="sv/index.html" hreflang="sv" lang="sv">Svenska</a></div>
       </div>
     </section>
-
-    <section class="section split">
-      <div><p class="eyebrow">Onder de motorkap</p><h2>Eén container, meerdere onderdelen</h2></div>
-      <div class="stack">
-        <div class="flow-row"><strong>Frontend/PWA</strong><span>Statische webapp met responsive collectie, cached app-shell en offline read fallback.</span></div>
-        <div class="flow-row"><strong>API</strong><span>Routes voor films, imports, watchlist, auth, groups, settings, backups en push.</span></div>
-        <div class="flow-row"><strong>Data en assets</strong><span>Persistente data in <code>/data</code>: collectiedata, posters, avatars, profielen en backups.</span></div>
-        <div class="flow-row"><strong>MCP</strong><span>Streamable HTTP endpoint via <code>/mcp</code>, bij voorkeur met persoonlijke API-key per gebruiker.</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="talen">
-      <div class="section-heading"><p class="eyebrow">Meertalig voorbereid</p><h2>Docs in dezelfde 11 talen als DiscVault</h2><p class="lead">De huidige fase levert de Nederlandse basis. De header bevat alvast een taalkiezer en de statische HTML-structuur kan per taalmap worden gekopieerd zonder build-step.</p></div>
-      <ul class="language-grid" aria-label="Geplande documentatietalen">
-        <li class="active">Nederlands</li><li>English</li><li>Deutsch</li><li>Français</li><li>Español</li><li>Italiano</li><li>Português</li><li>Dansk</li><li>Norsk</li><li>Suomi</li><li>Svenska</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <div class="section-heading"><p class="eyebrow">Niet overclaimen</p><h2>Belangrijke scope-notities</h2></div>
-      <div class="grid three">
-        <article class="callout warning"><h3>Self-hosted, geen SaaS</h3><p>DiscVault draait in je eigen Docker/Unraid-omgeving. Deze docs claimen geen cloudhosting of managed service.</p></article>
-        <article class="callout warning"><h3>PWA is niet volledig offline</h3><p>De app-shell en leesfallback kunnen cachen; schrijfacties hebben backend-connectiviteit nodig.</p></article>
-        <article class="callout warning"><h3>MCP is user-scoped</h3><p>Gebruik persoonlijke API-sleutels zodat AI-tools alleen data zien die bij die gebruiker hoort.</p></article>
-      </div>
-    </section>
-
   </main>
-  <footer class="site-footer">
-    <div>
-      <strong>DiscVault 26 Docs</strong>
-      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
-    </div>
-    <div class="footer-links">
-      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
-      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
-      <a href="docs-plan.md">Docs-plan</a>
-    </div>
-  </footer>
 </body>
 </html>

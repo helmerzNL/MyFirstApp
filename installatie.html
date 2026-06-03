@@ -3,72 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Installatie · DiscVault 26 Docs</title>
-  <meta name="description" content="Docker- en Unraid-installatiegids voor DiscVault 26.">
+  <title>DiscVault 26 Docs redirect</title>
+  <meta http-equiv="refresh" content="0; url=./nl/installatie.html">
+  <link rel="canonical" href="./nl/installatie.html">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#content">Spring naar inhoud</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="DiscVault 26 Docs home">
-      <span class="brand-mark">DV</span>
-      <span><strong>DiscVault 26</strong><small>Docs</small></span>
-    </a>
-    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="">Overzicht</a>
-<a href="installatie.html" class="active">Installatie</a>
-<a href="gebruikershandleiding.html" class="">Gebruik</a>
-<a href="beheer.html" class="">Beheer</a>
-<a href="mcp-ai.html" class="">MCP & AI</a>
-<a href="developers.html" class="">Developers</a>
-<a href="faq.html" class="">FAQ</a></nav>
-    <div class="header-actions">
-      <details class="language-menu">
-        <summary>Nederlands</summary>
-        <div class="language-list" aria-label="Beschikbare talen">
-          <a href="index.html" aria-current="true">Nederlands</a>
-          <span>English</span>
-          <span>Deutsch</span>
-          <span>Français</span>
-          <span>Español</span>
-          <span>Italiano</span>
-          <span>Português</span>
-          <span>Dansk</span>
-          <span>Norsk</span>
-          <span>Suomi</span>
-          <span>Svenska</span>
-        </div>
-      </details>
-      <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
-    </div>
-  </header>
   <main id="content">
-    <section class="hero">
-      <div class="hero-copy"><p class="eyebrow">Installatie</p><h1>Docker en Unraid quickstart</h1><p class="lead">Start DiscVault 26 als all-in-one container. De web UI/API draait standaard op hostpoort 6080; MCP kan via <code>/mcp</code> of optioneel via poort 6090.</p><div class="actions"><a class="button primary" href="#docker">Docker-run</a><a class="button" href="#unraid">Unraid-template</a></div></div>
-      <figure class="shot browser-frame"><img src="assets/images/discvault_available_in_unraid_community_applications.webp" alt="DiscVault beschikbaar in Unraid Community Applications"><figcaption>DiscVault is bedoeld voor eenvoudige self-hosting, onder andere via Unraid Community Applications.</figcaption></figure>
+    <section class="page-hero">
+      <p class="eyebrow">DiscVault 26 Docs</p>
+      <h1>Pagina verplaatst</h1>
+      <p class="lead">Deze pagina staat nu in de Nederlandse docs-map.</p>
+      <a class="button primary" href="./nl/installatie.html">Open de pagina</a>
     </section>
-    <section class="section" id="docker"><div class="section-heading"><p class="eyebrow">Quickstart</p><h2>Start met Docker</h2></div><pre><code>docker run -d \
-  --name discvault \
-  -p 6080:80 \
-  -p 6090:6090 \
-  -e TZ=Europe/Amsterdam \
-  -e RP_ID=localhost \
-  -e RP_ORIGIN=http://localhost:6080 \
-  -v /mnt/user/appdata/discvault:/data \
-  ghcr.io/helmerzNL/DiscVault:latest</code></pre><div class="callout"><h3>Open daarna de webapp</h3><p>Ga naar <code>http://localhost:6080</code>. Gebruik in productie een echte hostnaam en HTTPS, zodat passkeys betrouwbaar werken.</p></div></section>
-    <section class="section"><div class="section-heading"><p class="eyebrow">Configuratie</p><h2>Instellingen die je moet begrijpen</h2></div><dl class="spec-list"><div><dt><code>/data</code></dt><dd>Persistent volume met collectiedata, posters, profielen, avatars en backups. Zet dit op appdata/storage die updates overleeft.</dd></div><div><dt><code>RP_ID</code></dt><dd>Domein of hostnaam waarvoor passkeys geldig zijn, bijvoorbeeld <code>discvault.example.nl</code>.</dd></div><div><dt><code>RP_ORIGIN</code></dt><dd>Volledige origin inclusief protocol, bijvoorbeeld <code>https://discvault.example.nl</code>.</dd></div><div><dt><code>OMDB_API_KEY</code> / <code>TMDB_API_KEY</code></dt><dd>Optionele metadata keys voor rijkere filmdata en artwork.</dd></div><div><dt><code>JWT_SECRET</code></dt><dd>Eigen secret voor sessies/tokens. Gebruik een unieke waarde in productie.</dd></div></dl></section>
-    <section class="section" id="unraid"><div class="section-heading"><p class="eyebrow">Unraid</p><h2>Aanbevolen aanpak</h2></div><div class="steps"><article class="step"><h3>Installeer via Community Applications</h3><p>Zoek DiscVault en gebruik de template zodat poorten, appdata-pad en basisvariabelen goed staan.</p></article><article class="step"><h3>Bewaar data in appdata</h3><p>Gebruik bijvoorbeeld <code>/mnt/user/appdata/discvault</code> als hostpad voor <code>/data</code>.</p></article><article class="step"><h3>Maak backups vóór updates</h3><p>Gebruik de admin-backuptool of kopieer de data-map terwijl de container uit staat.</p></article><article class="step"><h3>Kies stable of beta bewust</h3><p><code>latest</code>/<code>stable</code> is bedoeld voor normaal gebruik. <code>beta</code> volgt wijzigingen vanaf main.</p></article></div></section>
-
   </main>
-  <footer class="site-footer">
-    <div>
-      <strong>DiscVault 26 Docs</strong>
-      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
-    </div>
-    <div class="footer-links">
-      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
-      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
-      <a href="docs-plan.md">Docs-plan</a>
-    </div>
-  </footer>
 </body>
 </html>

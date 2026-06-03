@@ -71,7 +71,7 @@ Coder: kopieer alleen de gekozen screenshots naar `MyFirstApp/assets/` of `MyFir
 - Nederlandse microcopy per pagina: korte intro, stappen, waarschuwingen en FAQ-antwoorden.
 - Heldere uitleg voor niet-developers van passkeys, invite-only, `/data` volume, backups en metadata API keys.
 - Screenshot-bijschriften in NL, met focus op “wat zie ik en wat doe ik hier?”.
-- Beslissing of de docs alleen NL worden of later meertalig; voor nu NL aanhouden.
+- Meertalige contentmatrix voor dezelfde 11 talen als DiscVault: zie `docs-i18n-content-matrix.md` en machineleesbare bron `i18n-content.json`.
 
 ## Expliciet nodig van coder
 

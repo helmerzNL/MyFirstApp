@@ -3,60 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ · DiscVault 26 Docs</title>
-  <meta name="description" content="Veelgestelde vragen over DiscVault 26 installatie, beheer, PWA, backups en MCP.">
+  <title>DiscVault 26 Docs redirect</title>
+  <meta http-equiv="refresh" content="0; url=./nl/faq.html">
+  <link rel="canonical" href="./nl/faq.html">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#content">Spring naar inhoud</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="DiscVault 26 Docs home">
-      <span class="brand-mark">DV</span>
-      <span><strong>DiscVault 26</strong><small>Docs</small></span>
-    </a>
-    <nav class="nav" aria-label="Hoofdnavigatie"><a href="index.html" class="">Overzicht</a>
-<a href="installatie.html" class="">Installatie</a>
-<a href="gebruikershandleiding.html" class="">Gebruik</a>
-<a href="beheer.html" class="">Beheer</a>
-<a href="mcp-ai.html" class="">MCP & AI</a>
-<a href="developers.html" class="">Developers</a>
-<a href="faq.html" class="active">FAQ</a></nav>
-    <div class="header-actions">
-      <details class="language-menu">
-        <summary>Nederlands</summary>
-        <div class="language-list" aria-label="Beschikbare talen">
-          <a href="index.html" aria-current="true">Nederlands</a>
-          <span>English</span>
-          <span>Deutsch</span>
-          <span>Français</span>
-          <span>Español</span>
-          <span>Italiano</span>
-          <span>Português</span>
-          <span>Dansk</span>
-          <span>Norsk</span>
-          <span>Suomi</span>
-          <span>Svenska</span>
-        </div>
-      </details>
-      <a class="github-link" href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">GitHub</a>
-    </div>
-  </header>
   <main id="content">
-    <section class="hero"><div class="hero-copy"><p class="eyebrow">FAQ</p><h1>Veelgestelde vragen</h1><p class="lead">Korte antwoorden voor installatie, passkeys, metadata, backups, PWA en MCP.</p><div class="actions"><a class="button primary" href="installatie.html">Terug naar installatie</a><a class="button" href="mcp-ai.html">MCP uitleg</a></div></div><div class="panel"><h2>Snelle diagnose</h2><p>Controleer eerst containerstatus, poort 6080, persistent <code>/data</code>, correcte <code>RP_ID</code>/<code>RP_ORIGIN</code> en browserconsole/logs.</p></div></section>
-    <section class="section"><div class="section-heading"><p class="eyebrow">Antwoorden</p><h2>Probleemoplossing</h2></div><div class="grid two"><article class="card"><h3>Waarom werken passkeys niet?</h3><p>Passkeys zijn gebonden aan domein/origin. Zet <code>RP_ID</code> op de hostnaam en <code>RP_ORIGIN</code> op de exacte URL inclusief protocol.</p></article><article class="card"><h3>Waar staat mijn data?</h3><p>In <code>/data</code>. Daar staan collectiedata, posters, profielen, avatars en backups. Zorg dat dit volume persistent is.</p></article><article class="card"><h3>Heb ik OMDb/TMDb keys nodig?</h3><p>Ze zijn optioneel, maar verbeteren metadata en artwork. Zonder keys kunnen sommige lookups minder rijk zijn.</p></article><article class="card"><h3>Is de PWA volledig offline?</h3><p>Nee. De app-shell en leesfallback kunnen cachen, maar acties die data wijzigen vereisen backend-connectiviteit.</p></article><article class="card"><h3>Welke image tag moet ik kiezen?</h3><p>Gebruik <code>latest</code>/<code>stable</code> voor normaal gebruik en <code>beta</code> om wijzigingen vanaf main te testen.</p></article><article class="card"><h3>Waarom ziet mijn AI niet alles?</h3><p>MCP gebruikt bij voorkeur persoonlijke API-keys. De zichtbare collectie, watchlist, geschiedenis en groups volgen de user-scope van die key.</p></article></div></section>
-    <section class="section"><div class="section-heading"><p class="eyebrow">Voor updates</p><h2>Veilige updatechecklist</h2></div><div class="steps"><article class="step"><h3>Maak een backup</h3><p>Gebruik admin backup/restore of kopieer de data-map terwijl de container uit staat.</p></article><article class="step"><h3>Controleer releasekanaal</h3><p>Blijf op stable/latest tenzij je bewust beta wilt testen.</p></article><article class="step"><h3>Bewaar je configuratie</h3><p>Noteer poorten, volumes en env-vars, vooral <code>RP_ID</code>, <code>RP_ORIGIN</code> en metadata keys.</p></article></div></section>
-
+    <section class="page-hero">
+      <p class="eyebrow">DiscVault 26 Docs</p>
+      <h1>Pagina verplaatst</h1>
+      <p class="lead">Deze pagina staat nu in de Nederlandse docs-map.</p>
+      <a class="button primary" href="./nl/faq.html">Open de pagina</a>
+    </section>
   </main>
-  <footer class="site-footer">
-    <div>
-      <strong>DiscVault 26 Docs</strong>
-      <p>Statische GitHub Pages-site zonder build-step. Relatieve links, lokale screenshots en geen secrets.</p>
-    </div>
-    <div class="footer-links">
-      <a href="https://github.com/helmerzNL/DiscVault" rel="noreferrer">DiscVault broncode</a>
-      <a href="https://discvault.eu" rel="noreferrer">Productwebsite</a>
-      <a href="docs-plan.md">Docs-plan</a>
-    </div>
-  </footer>
 </body>
 </html>
