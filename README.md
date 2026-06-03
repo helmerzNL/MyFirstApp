@@ -22,7 +22,9 @@ Daarna: http://localhost:8080
 
 ## GitHub Pages
 
-De site gebruikt alleen statische HTML, CSS en relatieve links. GitHub Pages kan later direct vanuit de branch/root publiceren zodra Pages in de repository-instellingen is ingeschakeld.
+De site gebruikt alleen statische HTML, CSS en relatieve links. Aanbevolen publicatie-route: GitHub Pages vanuit `main` en `/ (root)`, met `CNAME` op `docs.discvault.eu`.
+
+Zie `DEPLOYMENT.md` voor de permissiecheck, DNS/HTTPS-notities en het stappenplan voor Settings > Pages.
 
 ## Assets
 
